@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 270 58" width="270" height="58">
+  <!-- BALM wordmark in blue -->
+  <text x="4" y="37" font-family="Inter, Arial, sans-serif" font-weight="900" font-size="36" fill="#0047BA" letter-spacing="-0.5">BALM</text>
+  <!-- Green swoosh arc -->
+  <path d="M 4 43 C 42 50, 85 46, 122 41" stroke="#00D26A" stroke-width="3.2" fill="none" stroke-linecap="round"/>
+  <!-- Green bar -->
+  <rect x="4" y="46" width="208" height="11" rx="2" fill="#00D26A"/>
+  <!-- OF GILEAD LOGISTICS text on green bar -->
+  <text x="10" y="55.5" font-family="Inter, Arial, sans-serif" font-weight="700" font-size="8.2" fill="#0D0D0D" letter-spacing="1.6">OF GILEAD LOGISTICS</text>
+</svg>

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Get a Quote &mdash; Balm of Gilead Logistics</title>
+  <meta name="description" content="Request a free quote for cargo van delivery services from Balm of Gilead Logistics. Same-day, next-day, and scheduled routes available." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles/main.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" id="mainNav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="images/logo.svg" alt="Balm of Gilead Logistics" />
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#services">Services</a></li>
+        <li><a href="index.html#industries">Industries</a></li>
+        <li><a href="contact.html" class="btn btn--primary nav-cta active">Get a Quote</a></li>
+      </ul>
+      <button class="nav-hamburger" id="hamburger" aria-label="Open navigation menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <span class="section-label">Let's Talk</span>
+    <h1>Request a Free Quote</h1>
+    <p>Tell us about your delivery needs — we'll follow up within 1 business day
+       with a tailored solution.</p>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section class="section-contact">
+    <div class="contact-layout">
+
+      <!-- Contact Info Cards -->
+      <div class="contact-cards reveal">
+        <div class="contact-card">
+          <div class="contact-card-icon">&#128222;</div>
+          <div class="contact-card-body">
+            <h4>Phone</h4>
+            <a href="tel:1234567890">(123) 456-7890</a>
+          </div>
+        </div>
+        <div class="contact-card">
+          <div class="contact-card-icon">&#9993;</div>
+          <div class="contact-card-body">
+            <h4>Email</h4>
+            <a href="mailto:info@balmofgileadlogistics.com">info@balmofgileadlogistics.com</a>
+          </div>
+        </div>
+        <div class="contact-card">
+          <div class="contact-card-icon">&#128205;</div>
+          <div class="contact-card-body">
+            <h4>Service Area</h4>
+            <p>Local &amp; Regional Routes<br />Contact us for coverage details</p>
+          </div>
+        </div>
+        <div class="contact-card">
+          <div class="contact-card-icon">&#128336;</div>
+          <div class="contact-card-body">
+            <h4>Business Hours</h4>
+            <p>Mon&ndash;Fri: 7am &ndash; 6pm<br />Sat: 8am &ndash; 2pm</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quote Form -->
+      <div class="quote-form-wrap reveal reveal-delay-1">
+        <h2>Get Your Free Quote</h2>
+        <p>Fill out the form below and we'll follow up within 1 business day.</p>
+
+        <p id="form-success" class="form-success" role="status">
+          Thanks! Your inquiry was received. We'll be in touch within 1 business day.
+        </p>
+        <p id="form-error" class="form-error" role="alert">
+          Something went wrong. Please email us directly at
+          <a href="mailto:info@balmofgileadlogistics.com">info@balmofgileadlogistics.com</a>.
+        </p>
+
+        <!-- ACTION: Replace YOUR_FORM_ID with your Formspree form ID after signing up at formspree.io -->
+        <form class="form-grid" id="quoteForm"
+              action="https://formspree.io/f/YOUR_FORM_ID"
+              method="POST">
+          <input type="hidden" name="_subject" value="New Quote Request &mdash; Balm of Gilead Logistics" />
+
+          <div class="form-group">
+            <label for="firstName">First Name *</label>
+            <input type="text" id="firstName" name="firstName" placeholder="First" required />
+          </div>
+          <div class="form-group">
+            <label for="lastName">Last Name *</label>
+            <input type="text" id="lastName" name="lastName" placeholder="Last" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address *</label>
+            <input type="email" id="email" name="email" placeholder="you@company.com" required />
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" placeholder="(555) 000-0000" />
+          </div>
+          <div class="form-group full">
+            <label for="company">Company / Organization *</label>
+            <input type="text" id="company" name="company" placeholder="Your Company Name" required />
+          </div>
+          <div class="form-group full">
+            <label for="service">Service Needed</label>
+            <select id="service" name="service">
+              <option value="">Select a service</option>
+              <option>Local &amp; Regional Delivery</option>
+              <option>Same-Day Delivery</option>
+              <option>Next-Day Delivery</option>
+              <option>Scheduled Recurring Routes</option>
+              <option>Overflow &amp; Peak-Season Capacity</option>
+              <option>On-Demand Runs</option>
+              <option>Backup &amp; Supplemental Fleet Coverage</option>
+              <option>Not sure &mdash; let's talk</option>
+            </select>
+          </div>
+          <div class="form-group full">
+            <label for="message">Tell Us About Your Delivery Needs</label>
+            <textarea id="message" name="message"
+              placeholder="Describe what you need moved, how often, pickup/delivery locations, load size, urgency, or any other details&hellip;"></textarea>
+          </div>
+          <button type="submit" class="btn btn--blue form-submit full">
+            Submit Quote Request &rarr;
+          </button>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section-cta">
+    <div class="reveal">
+      <span class="section-label" style="color:rgba(255,255,255,0.5)">Prefer to Call?</span>
+      <h2>We're Ready to Help Right Now</h2>
+      <p>Reach us directly by phone — we'll answer your questions and get your
+         delivery scheduled fast.</p>
+      <a href="tel:1234567890" class="btn btn--white">Call (123) 456-7890 &rarr;</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <img src="images/logo.svg" alt="Balm of Gilead Logistics" style="height:36px;width:auto;" />
+          <p>Delivering Convenience, One Doorstep at a Time. Local and regional cargo van
+             delivery for businesses that need it done right.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="index.html#services">Local &amp; Regional Delivery</a></li>
+            <li><a href="index.html#services">Same-Day &amp; Next-Day</a></li>
+            <li><a href="index.html#services">Scheduled Routes</a></li>
+            <li><a href="index.html#services">Overflow Capacity</a></li>
+            <li><a href="index.html#services">On-Demand Runs</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="tel:1234567890">(123) 456-7890</a></li>
+            <li><a href="mailto:info@balmofgileadlogistics.com">info@balmofgileadlogistics.com</a></li>
+            <li><a href="contact.html">Get a Quote</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">&copy; 2026 Balm of Gilead Logistics. All rights reserved.</p>
+        <p class="footer-copy">Delivering Convenience, One Doorstep at a Time.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="scripts/site.js" defer></script>
+</body>
+</html>
