@@ -641,3 +641,189 @@ footer {
   .quote-form-wrap { padding: 28px 20px; }
   .stats-grid     { grid-template-columns: 1fr 1fr; }
 }
+
+/* =============================================
+   PAIN POINTS
+============================================= */
+.section-pain {
+  padding: 100px 24px;
+  background: var(--dark);
+}
+.section-pain .section-header .section-label { color: #e05555; }
+.section-pain .section-header h2 { color: var(--white); }
+.section-pain .section-header p  { color: rgba(255,255,255,0.55); }
+
+.pain-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  max-width: 1160px;
+  margin: 0 auto;
+}
+.pain-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 14px;
+  padding: 32px 26px;
+  transition: border-color 0.25s, background 0.25s, transform 0.25s var(--ease);
+}
+.pain-card:hover {
+  border-color: rgba(224,85,85,0.35);
+  background: rgba(255,255,255,0.06);
+  transform: translateY(-3px);
+}
+.pain-icon {
+  font-size: 1.75rem;
+  margin-bottom: 16px;
+  display: block;
+}
+.pain-card h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 10px;
+  line-height: 1.3;
+}
+.pain-card p {
+  font-size: 0.88rem;
+  color: rgba(255,255,255,0.52);
+  line-height: 1.7;
+}
+
+/* =============================================
+   CLIENT LOGOS
+============================================= */
+.section-clients {
+  padding: 90px 24px;
+  background: var(--off-white);
+}
+.clients-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+  max-width: 1160px;
+  margin: 0 auto;
+}
+.client-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 24px 16px;
+  background: var(--white);
+  border: 1.5px solid var(--gray);
+  border-radius: 12px;
+  text-align: center;
+  transition: border-color 0.22s, box-shadow 0.22s, transform 0.22s;
+  filter: grayscale(1);
+  opacity: 0.7;
+}
+.client-logo:hover {
+  filter: grayscale(0);
+  opacity: 1;
+  border-color: var(--blue);
+  box-shadow: 0 4px 20px rgba(0,71,186,0.12);
+  transform: translateY(-3px);
+}
+.client-logo-mark {
+  width: 52px;
+  height: 52px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  font-weight: 900;
+  color: var(--white);
+  letter-spacing: 0.04em;
+  font-family: var(--ff);
+}
+.client-logo span {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  line-height: 1.3;
+}
+
+/* =============================================
+   SERVICE AREA MAP
+============================================= */
+.section-map {
+  padding: 100px 24px;
+  background: var(--dark-2);
+}
+.section-map .section-header h2 { color: var(--white); }
+.section-map .section-header p  { color: rgba(255,255,255,0.55); }
+
+.map-layout {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 56px;
+  align-items: center;
+  max-width: 1160px;
+  margin: 0 auto;
+}
+.map-svg-wrap {
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.5);
+}
+.map-svg-wrap svg { display: block; width: 100%; height: auto; }
+
+.map-legend h3 {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--white);
+  margin-bottom: 24px;
+}
+.legend-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  margin-bottom: 22px;
+}
+.legend-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+.legend-primary .legend-dot  { background: var(--blue); box-shadow: 0 0 0 3px rgba(0,71,186,0.3); }
+.legend-secondary .legend-dot { background: #1a3d6e; border: 2px solid #0047BA; }
+
+.legend-item strong {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 4px;
+}
+.legend-item p {
+  font-size: 0.84rem;
+  color: rgba(255,255,255,0.52);
+  line-height: 1.55;
+  margin: 0;
+}
+
+.map-contact-cta {
+  margin-top: 32px;
+  padding-top: 28px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+.map-contact-cta p {
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.55);
+  margin-bottom: 14px;
+}
+
+/* Responsive for new sections */
+@media (max-width: 900px) {
+  .pain-grid    { grid-template-columns: repeat(2, 1fr); }
+  .clients-grid { grid-template-columns: repeat(3, 1fr); }
+  .map-layout   { grid-template-columns: 1fr; }
+}
+@media (max-width: 600px) {
+  .pain-grid    { grid-template-columns: 1fr; }
+  .clients-grid { grid-template-columns: repeat(2, 1fr); }
+}
