@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Now Hiring Subcontractors &mdash; Balm of Gilead Logistics</title>
+  <meta name="description" content="Drive for Balm of Gilead Logistics. We're hiring independent subcontractor drivers with cargo vans, box trucks, SUVs, and sedans across Michigan." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles/main.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" id="mainNav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="images/logo.svg" alt="Balm of Gilead Logistics" />
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#services">Services</a></li>
+        <li><a href="index.html#service-area">Service Area</a></li>
+        <li><a href="index.html#industries">Industries</a></li>
+        <li><a href="subcontractors.html" class="active">Now Hiring</a></li>
+        <li><a href="contact.html" class="btn btn--primary nav-cta">Get a Quote</a></li>
+      </ul>
+      <button class="nav-hamburger" id="hamburger" aria-label="Open navigation menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <span class="section-label">Join Our Team</span>
+    <h1>Now Hiring Subcontractors</h1>
+    <p>Drive with Balm of Gilead Logistics. We partner with independent owner-operators across Michigan &mdash; use your own vehicle, set your schedule, grow with us.</p>
+  </section>
+
+  <!-- PERKS STRIP -->
+  <div class="stats-strip">
+    <div class="stats-grid">
+      <div class="stat-item">
+        <div class="stat-number">Flexible</div>
+        <div class="stat-label">Set Your Own Schedule</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">Your</div>
+        <div class="stat-label">Own Vehicle</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">Local</div>
+        <div class="stat-label">Michigan Routes</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">Growing</div>
+        <div class="stat-label">Delivery Network</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- APPLICATION FORM -->
+  <section class="sub-form-section">
+    <div class="sub-form-inner">
+
+      <!-- What we're looking for -->
+      <div class="section-header reveal" style="margin-bottom:36px;">
+        <span class="section-label">Apply Now</span>
+        <h2>Tell Us About Yourself</h2>
+        <p>Fill out the form below and our team will follow up within 1&ndash;2 business days to discuss available opportunities.</p>
+      </div>
+
+      <div class="quote-form-wrap reveal">
+        <h2>Subcontractor Application</h2>
+        <p>All vehicle types welcome. Insurance required to operate.</p>
+
+        <p id="sub-success" class="form-success" role="status">
+          Thanks for applying! We&rsquo;ll be in touch within 1&ndash;2 business days.
+        </p>
+        <p id="sub-error" class="form-error" role="alert">
+          Something went wrong. Please call us at <a href="tel:9094777510">909-477-7510</a> or email info@balmofgileadlogistics.com.
+        </p>
+
+        <form id="subForm" class="form-grid" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+          <input type="hidden" name="_subject" value="Subcontractor Application &mdash; Balm of Gilead Logistics" />
+
+          <div class="form-group">
+            <label for="firstName">First Name *</label>
+            <input type="text" id="firstName" name="firstName" placeholder="First" required />
+          </div>
+          <div class="form-group">
+            <label for="lastName">Last Name *</label>
+            <input type="text" id="lastName" name="lastName" placeholder="Last" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address *</label>
+            <input type="email" id="email" name="email" placeholder="you@email.com" required />
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone Number *</label>
+            <input type="tel" id="phone" name="phone" placeholder="(555) 000-0000" required />
+          </div>
+          <div class="form-group">
+            <label for="city">City / Location *</label>
+            <input type="text" id="city" name="city" placeholder="e.g. Grand Rapids, MI" required />
+          </div>
+          <div class="form-group">
+            <label for="experience">Years of Delivery Experience</label>
+            <select id="experience" name="experience">
+              <option value="">Select</option>
+              <option>Less than 1 year</option>
+              <option>1&ndash;2 years</option>
+              <option>3&ndash;5 years</option>
+              <option>5+ years</option>
+            </select>
+          </div>
+
+          <!-- Vehicle Type -->
+          <div class="form-group full">
+            <label>Vehicle Type * (select all that apply)</label>
+            <div class="check-group">
+              <label class="check-item">
+                <input type="checkbox" name="vehicle[]" value="Box Truck" /> Box Truck
+              </label>
+              <label class="check-item">
+                <input type="checkbox" name="vehicle[]" value="Cargo Van" /> Cargo Van
+              </label>
+              <label class="check-item">
+                <input type="checkbox" name="vehicle[]" value="Regular Van" /> Regular Van
+              </label>
+              <label class="check-item">
+                <input type="checkbox" name="vehicle[]" value="SUV" /> SUV
+              </label>
+              <label class="check-item">
+                <input type="checkbox" name="vehicle[]" value="Sedan" /> Sedan
+              </label>
+            </div>
+          </div>
+
+          <!-- Insurance -->
+          <div class="form-group full">
+            <label>Do you have commercial vehicle insurance? *</label>
+            <div class="check-group">
+              <label class="check-item">
+                <input type="radio" name="insurance" value="Yes" required /> Yes, I have insurance
+              </label>
+              <label class="check-item">
+                <input type="radio" name="insurance" value="No" /> No, not yet
+              </label>
+            </div>
+          </div>
+
+          <div class="form-group full">
+            <label for="availability">Availability</label>
+            <select id="availability" name="availability">
+              <option value="">Select your availability</option>
+              <option>Weekdays only</option>
+              <option>Weekends only</option>
+              <option>Weekdays &amp; weekends</option>
+              <option>Flexible / as needed</option>
+            </select>
+          </div>
+
+          <div class="form-group full">
+            <label for="notes">Anything else we should know?</label>
+            <textarea id="notes" name="notes" placeholder="Tell us about your experience, the type of routes you&rsquo;re interested in, or any questions you have&hellip;"></textarea>
+          </div>
+
+          <button type="submit" class="btn btn--primary form-submit full">
+            Submit Application &rarr;
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section-cta">
+    <div class="reveal">
+      <span class="section-label">Questions?</span>
+      <h2>We&rsquo;d Love to Talk</h2>
+      <p>Call us directly and we&rsquo;ll answer any questions about driving with Balm of Gilead Logistics.</p>
+      <div class="cta-actions">
+        <a href="tel:9094777510" class="btn btn--white">Call 909-477-7510</a>
+        <a href="mailto:info@balmofgileadlogistics.com" class="btn btn--ghost-white">Email Us</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <img src="images/logo.svg" alt="Balm of Gilead Logistics" style="height:36px;width:auto;" />
+          <p>Fast, reliable, same-day cargo van courier service. Serving Grand Rapids, Kalamazoo and the surrounding 200-mile radius.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="index.html#services">Same-Day Courier</a></li>
+            <li><a href="index.html#services">Scheduled Routes</a></li>
+            <li><a href="index.html#services">On-Demand Pickups</a></li>
+            <li><a href="index.html#services">B2B Deliveries</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="index.html#service-area">Service Area</a></li>
+            <li><a href="subcontractors.html">Now Hiring</a></li>
+            <li><a href="contact.html">Get a Quote</a></li>
+            <li><a href="tel:9094777510">909-477-7510</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">&copy; 2026 Balm of Gilead Logistics. All rights reserved.</p>
+        <p class="footer-copy">Delivering Convenience, One Doorstep at a Time.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="scripts/site.js" defer></script>
+</body>
+</html>

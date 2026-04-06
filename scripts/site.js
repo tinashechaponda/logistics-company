@@ -1,18 +1,18 @@
 /* ================================================
-   BALM OF GILEAD LOGISTICS — scripts/site.js
-   External file required by CSP: script-src 'self'
-   All JS must live here — NO inline scripts.
+   BALM OF GILEAD LOGISTICS — site.js
+   External script (CSP: script-src 'self' requires
+   all JS in external files — no inline scripts)
 ================================================ */
 
 /* --- Nav: scroll shadow + hamburger ----------- */
 (function () {
-  var nav = document.getElementById('mainNav');
+  var nav       = document.getElementById('mainNav');
+  var hamburger = document.getElementById('hamburger');
+  var navLinks  = document.getElementById('navLinks');
+
   window.addEventListener('scroll', function () {
     if (nav) nav.classList.toggle('scrolled', window.scrollY > 40);
   });
-
-  var hamburger = document.getElementById('hamburger');
-  var navLinks  = document.getElementById('navLinks');
 
   if (hamburger && navLinks) {
     hamburger.addEventListener('click', function () {
@@ -33,9 +33,7 @@
   var observer = new IntersectionObserver(
     function (entries) {
       entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
+        if (entry.isIntersecting) entry.target.classList.add('visible');
       });
     },
     { threshold: 0.1 }
@@ -45,22 +43,18 @@
   });
 })();
 
-/* --- Quote form: async Formspree submit ------- */
+/* --- Quote form (contact.html) ---------------- */
 (function () {
   var form    = document.getElementById('quoteForm');
   var success = document.getElementById('form-success');
   var error   = document.getElementById('form-error');
-
   if (!form) return;
 
   form.addEventListener('submit', function (e) {
     e.preventDefault();
-    var btn = form.querySelector('.form-submit');
-    if (btn) { btn.textContent = 'Sending\u2026'; btn.disabled = true; }
-
     fetch(form.action, {
-      method:  'POST',
-      body:    new FormData(form),
+      method: 'POST',
+      body: new FormData(form),
       headers: { 'Accept': 'application/json' }
     })
     .then(function (res) {
@@ -76,7 +70,37 @@
     .catch(function () {
       if (error)   error.style.display   = 'block';
       if (success) success.style.display = 'none';
-      if (btn) { btn.textContent = 'Submit Quote Request \u2192'; btn.disabled = false; }
+    });
+  });
+})();
+
+/* --- Subcontractor form (subcontractors.html) - */
+(function () {
+  var form    = document.getElementById('subForm');
+  var success = document.getElementById('sub-success');
+  var error   = document.getElementById('sub-error');
+  if (!form) return;
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { 'Accept': 'application/json' }
+    })
+    .then(function (res) {
+      if (res.ok) {
+        if (success) success.style.display = 'block';
+        if (error)   error.style.display   = 'none';
+        form.reset();
+        form.style.display = 'none';
+      } else {
+        throw new Error('failed');
+      }
+    })
+    .catch(function () {
+      if (error)   error.style.display   = 'block';
+      if (success) success.style.display = 'none';
     });
   });
 })();
