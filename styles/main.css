@@ -74,6 +74,7 @@ a  { text-decoration: none; color: inherit; }
   font-weight: 800;
 }
 .btn--green:hover { background: var(--green-dark); border-color: var(--green-dark); box-shadow: 0 6px 20px rgba(0,210,106,0.28); }
+.btn--green.nav-cta { color: var(--white); font-weight: 800; letter-spacing: 0.04em; }
 
 .btn--outline {
   background: transparent;
