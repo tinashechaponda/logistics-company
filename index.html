@@ -26,6 +26,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700;1,800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.min.css" />
   <link rel="stylesheet" href="styles/main.css" />
 </head>
 <body>
@@ -73,100 +74,13 @@
         </div>
       </div>
       <div class="hero-map">
-        <svg viewBox="0 0 680 500" xmlns="http://www.w3.org/2000/svg" aria-label="Service area map — Michigan and surrounding states" role="img">
-          <!-- Background -->
-          <rect width="680" height="500" fill="#EEF4FF" rx="14"/>
-
-          <!-- Coming Soon states (MN, IA, MO) — lighter with label -->
-          <polygon points="55,25 280,25 285,55 275,185 215,190 55,190"
-            fill="#DDEEFF" stroke="#B0CCF0" stroke-width="1.2" stroke-dasharray="5,3" opacity="0.9"/>
-          <text x="155" y="112" text-anchor="middle" fill="#4A6A9A" font-size="11" font-family="Inter,sans-serif" font-weight="700">MN</text>
-          <text x="155" y="127" text-anchor="middle" fill="#7AA0C8" font-size="8.5" font-family="Inter,sans-serif" font-weight="600">COMING SOON</text>
-
-          <polygon points="55,190 215,190 225,195 230,310 55,310"
-            fill="#DDEEFF" stroke="#B0CCF0" stroke-width="1.2" stroke-dasharray="5,3" opacity="0.9"/>
-          <text x="143" y="252" text-anchor="middle" fill="#4A6A9A" font-size="11" font-family="Inter,sans-serif" font-weight="700">IA</text>
-          <text x="143" y="267" text-anchor="middle" fill="#7AA0C8" font-size="8.5" font-family="Inter,sans-serif" font-weight="600">COMING SOON</text>
-
-          <polygon points="55,310 230,310 235,320 240,410 55,415"
-            fill="#DDEEFF" stroke="#B0CCF0" stroke-width="1.2" stroke-dasharray="5,3" opacity="0.9"/>
-          <text x="148" y="362" text-anchor="middle" fill="#4A6A9A" font-size="11" font-family="Inter,sans-serif" font-weight="700">MO</text>
-          <text x="148" y="377" text-anchor="middle" fill="#7AA0C8" font-size="8.5" font-family="Inter,sans-serif" font-weight="600">COMING SOON</text>
-
-          <!-- WI - secondary -->
-          <polygon points="275,35 355,30 375,45 390,80 390,110 370,175 340,200 295,205 280,190 285,110 285,55"
-            fill="#C8DAF5" stroke="#93B8E8" stroke-width="1.2" opacity="0.9"/>
-          <text x="332" y="130" text-anchor="middle" fill="#4A6A9A" font-size="11" font-family="Inter,sans-serif" font-weight="700">WI</text>
-
-          <!-- IL - Primary (darkened) -->
-          <polygon points="240,310 340,305 345,320 350,390 340,430 290,435 240,430 235,390"
-            fill="#0047BA" stroke="#00D26A" stroke-width="1.5" opacity="0.9"/>
-          <text x="293" y="378" text-anchor="middle" fill="#ffffff" font-size="11" font-family="Inter,sans-serif" font-weight="700">IL</text>
-
-          <!-- IN - Primary (darkened) -->
-          <polygon points="340,305 410,302 415,315 418,420 350,425 345,380 345,320"
-            fill="#0047BA" stroke="#00D26A" stroke-width="1.5" opacity="0.9"/>
-          <text x="378" y="370" text-anchor="middle" fill="#ffffff" font-size="11" font-family="Inter,sans-serif" font-weight="700">IN</text>
-
-          <!-- KY - secondary -->
-          <polygon points="295,435 418,425 500,428 510,455 480,470 295,470"
-            fill="#C8DAF5" stroke="#93B8E8" stroke-width="1.2" opacity="0.9"/>
-          <text x="400" y="455" text-anchor="middle" fill="#4A6A9A" font-size="11" font-family="Inter,sans-serif" font-weight="700">KY</text>
-
-          <!-- OH - Primary (darkened) -->
-          <polygon points="415,302 510,295 530,310 535,390 510,420 418,420 415,370 415,315"
-            fill="#0047BA" stroke="#00D26A" stroke-width="1.5" opacity="0.9"/>
-          <text x="475" y="365" text-anchor="middle" fill="#ffffff" font-size="11" font-family="Inter,sans-serif" font-weight="700">OH</text>
-
-          <!-- PA - context -->
-          <polygon points="530,295 620,288 625,380 530,385 535,340 530,310"
-            fill="#DDE8F8" stroke="#B0C8E8" stroke-width="1" opacity="0.7"/>
-          <text x="575" y="340" text-anchor="middle" fill="#8AA8C8" font-size="10" font-family="Inter,sans-serif" font-weight="500">PA</text>
-
-          <!-- Lakes -->
-          <ellipse cx="390" cy="245" rx="28" ry="70" fill="#A8CBE8" stroke="#80AACC" stroke-width="1" opacity="0.85"/>
-          <text x="390" y="249" text-anchor="middle" fill="#4A7A9A" font-size="8" font-family="Inter,sans-serif" font-weight="600">Lake</text>
-          <text x="390" y="260" text-anchor="middle" fill="#4A7A9A" font-size="8" font-family="Inter,sans-serif" font-weight="600">Michigan</text>
-
-          <ellipse cx="540" cy="278" rx="45" ry="15" fill="#A8CBE8" stroke="#80AACC" stroke-width="1" opacity="0.85"/>
-          <text x="540" y="282" text-anchor="middle" fill="#4A7A9A" font-size="7.5" font-family="Inter,sans-serif" font-weight="600">Lake Erie</text>
-
-          <ellipse cx="540" cy="200" rx="25" ry="55" fill="#A8CBE8" stroke="#80AACC" stroke-width="1" opacity="0.85"/>
-          <text x="540" y="197" text-anchor="middle" fill="#4A7A9A" font-size="7.5" font-family="Inter,sans-serif" font-weight="600">Lake</text>
-          <text x="540" y="208" text-anchor="middle" fill="#4A7A9A" font-size="7.5" font-family="Inter,sans-serif" font-weight="600">Huron</text>
-
-          <ellipse cx="340" cy="78" rx="110" ry="35" fill="#A8CBE8" stroke="#80AACC" stroke-width="1" opacity="0.85"/>
-          <text x="340" y="82" text-anchor="middle" fill="#4A7A9A" font-size="8.5" font-family="Inter,sans-serif" font-weight="600">Lake Superior</text>
-
-          <!-- MICHIGAN — PRIMARY -->
-          <polygon points="270,118 430,110 460,125 465,150 450,162 390,170 330,168 285,160 265,145"
-            fill="#0047BA" stroke="#00D26A" stroke-width="2" opacity="0.95"/>
-          <text x="365" y="145" text-anchor="middle" fill="#ffffff" font-size="9" font-family="Inter,sans-serif" font-weight="700">UPPER PENINSULA</text>
-
-          <polygon points="415,302 420,295 430,280 445,265 460,260 468,248 490,232 505,220 498,210 480,220 468,238 458,248 445,255 438,268 430,262 420,248 418,235 420,220 416,212 410,175 398,168 385,170 370,175 360,185 350,198 345,215 345,230 350,248 355,268 360,285 362,302"
-            fill="#0047BA" stroke="#00D26A" stroke-width="2" opacity="0.95"/>
-          <text x="388" y="245" text-anchor="middle" fill="#ffffff" font-size="13" font-family="Inter,sans-serif" font-weight="800">MI</text>
-          <text x="388" y="260" text-anchor="middle" fill="rgba(255,255,255,0.75)" font-size="8.5" font-family="Inter,sans-serif" font-weight="600">MICHIGAN</text>
-
-          <!-- City dots -->
-          <circle cx="370" cy="258" r="5" fill="#00D26A" stroke="white" stroke-width="1.5"/>
-          <text x="357" y="252" fill="#0D1B2A" font-size="8.5" font-family="Inter,sans-serif" font-weight="700" text-anchor="end">Grand Rapids</text>
-
-          <circle cx="378" cy="278" r="5" fill="#00D26A" stroke="white" stroke-width="1.5"/>
-          <text x="365" y="293" fill="#0D1B2A" font-size="8.5" font-family="Inter,sans-serif" font-weight="700" text-anchor="end">Kalamazoo</text>
-
-          <circle cx="395" cy="288" r="4" fill="#00D26A" stroke="white" stroke-width="1.5"/>
-          <text x="408" y="292" fill="#0D1B2A" font-size="8" font-family="Inter,sans-serif" font-weight="600">Battle Creek</text>
-
-          <circle cx="420" cy="285" r="4" fill="#93B8E8" stroke="white" stroke-width="1.5"/>
-          <text x="430" y="289" fill="#4A6A9A" font-size="8" font-family="Inter,sans-serif" font-weight="600">Detroit</text>
-
-          <!-- Legend -->
-          <rect x="14" y="460" width="180" height="22" rx="5" fill="#0047BA"/>
-          <text x="104" y="475" text-anchor="middle" fill="#ffffff" font-size="8.5" font-family="Inter,sans-serif" font-weight="700" letter-spacing="0.5">&#11044; PRIMARY COVERAGE</text>
-          <rect x="204" y="460" width="160" height="22" rx="5" fill="#DDEEFF" stroke="#B0CCF0" stroke-width="1"/>
-          <text x="284" y="475" text-anchor="middle" fill="#4A6A9A" font-size="8.5" font-family="Inter,sans-serif" font-weight="700" letter-spacing="0.5">- - COMING SOON</text>
-        </svg>
+        <div class="map-wrapper">
+          <div class="map-legend">
+            <div class="map-legend-item primary"><span></span>Primary Hubs</div>
+            <div class="map-legend-item secondary"><span></span>Service Area</div>
+          </div>
+          <div id="service-map"></div>
+        </div>
       </div>
     </div>
   </section>
@@ -459,6 +373,8 @@
     </div>
   </footer>
 
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.min.js"></script>
   <script src="scripts/site.js" defer></script>
+  <script src="scripts/map.js" defer></script>
 </body>
 </html>
