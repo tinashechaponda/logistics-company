@@ -891,14 +891,28 @@ a  { text-decoration: none; color: inherit; }
 }
 .hiring-visual {
   flex-shrink: 0;
-  width: 480px;
+  width: 500px;
   max-width: 100%;
-  opacity: 0.92;
+  position: relative;
 }
-.hiring-visual svg {
+.van-img {
   width: 100%;
   height: auto;
-  filter: drop-shadow(0 20px 40px rgba(0,71,186,0.4));
+  display: block;
+  filter: drop-shadow(0 24px 40px rgba(0,0,0,0.55)) drop-shadow(0 8px 16px rgba(0,71,186,0.3));
+  position: relative;
+  z-index: 1;
+}
+.van-shadow {
+  position: absolute;
+  bottom: 4%;
+  left: 10%;
+  width: 80%;
+  height: 18px;
+  background: radial-gradient(ellipse, rgba(0,210,106,0.25) 0%, transparent 70%);
+  border-radius: 50%;
+  filter: blur(6px);
+  z-index: 0;
 }
 
 /* =============================================
