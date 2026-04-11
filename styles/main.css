@@ -327,53 +327,30 @@ a  { text-decoration: none; color: inherit; }
 }
 .hero-trust-badge span { font-size: 0.95rem; }
 
-.map-wrapper {
+.hero-van-wrap {
   position: relative;
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  box-shadow: 0 20px 60px rgba(0,71,186,0.18), 0 4px 20px rgba(0,0,0,0.1);
-  border: 1px solid var(--blue-mid);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
 }
-#service-map {
-  width: 100%;
-  height: 460px;
-  border-radius: var(--radius-lg);
-}
-.map-legend {
+.hero-van-wrap::before {
+  content: '';
   position: absolute;
-  bottom: 16px;
-  left: 16px;
-  z-index: 1000;
-  background: rgba(13,27,42,0.92);
-  backdrop-filter: blur(8px);
-  border: 1px solid rgba(0,210,106,0.25);
-  border-radius: 8px;
-  padding: 10px 14px;
-  display: flex;
-  gap: 14px;
-}
-.map-legend-item {
-  display: flex;
-  align-items: center;
-  gap: 7px;
-  font-size: 0.75rem;
-  font-weight: 600;
-  color: rgba(255,255,255,0.85);
-  font-family: var(--ff);
-}
-.map-legend-item.primary span {
-  width: 12px; height: 12px;
-  background: #00D26A;
-  border: 2px solid #fff;
+  bottom: 0;
+  left: 10%;
+  width: 80%;
+  height: 30px;
+  background: radial-gradient(ellipse, rgba(0,71,186,0.18) 0%, transparent 70%);
   border-radius: 50%;
-  display: inline-block;
+  filter: blur(10px);
 }
-.map-legend-item.secondary span {
-  width: 10px; height: 10px;
-  background: #0047BA;
-  border: 2px solid #fff;
-  border-radius: 50%;
-  display: inline-block;
+.hero-van-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 30px 50px rgba(0,0,0,0.25)) drop-shadow(0 8px 20px rgba(0,71,186,0.2));
+  position: relative;
+  z-index: 1;
 }
 
 /* =============================================
@@ -848,71 +825,64 @@ a  { text-decoration: none; color: inherit; }
   position: relative;
   z-index: 1;
 }
-.hiring-left h2 {
-  font-family: var(--ff-display);
-  font-size: clamp(2rem, 3.5vw, 3rem);
-  font-weight: 800;
-  color: var(--white);
-  line-height: 1.1;
-  margin-bottom: 14px;
-}
-.hiring-left p {
-  font-size: 0.975rem;
-  color: rgba(255,255,255,0.58);
-  max-width: 460px;
-  line-height: 1.75;
-  margin-bottom: 20px;
-}
-.hiring-perks {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  margin-bottom: 28px;
-}
-.hiring-perk {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 0.875rem;
-  font-weight: 600;
-  color: rgba(255,255,255,0.75);
-}
-.hiring-perk span {
-  width: 20px; height: 20px;
-  border-radius: 50%;
-  background: var(--green);
-  color: var(--navy);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.65rem;
-  font-weight: 900;
-  flex-shrink: 0;
-}
-.hiring-visual {
-  flex-shrink: 0;
-  width: 500px;
-  max-width: 100%;
-  position: relative;
-}
-.van-img {
-  width: 100%;
-  height: auto;
-  display: block;
-  filter: drop-shadow(0 24px 40px rgba(0,0,0,0.55)) drop-shadow(0 8px 16px rgba(0,71,186,0.3));
+.hiring-centered {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
   position: relative;
   z-index: 1;
 }
-.van-shadow {
-  position: absolute;
-  bottom: 4%;
-  left: 10%;
-  width: 80%;
-  height: 18px;
-  background: radial-gradient(ellipse, rgba(0,210,106,0.25) 0%, transparent 70%);
-  border-radius: 50%;
-  filter: blur(6px);
-  z-index: 0;
+.hiring-centered h2 {
+  font-family: var(--ff-display);
+  font-size: clamp(2rem, 3.8vw, 3.2rem);
+  font-weight: 800;
+  color: var(--white);
+  line-height: 1.1;
+  margin-bottom: 16px;
+}
+.hiring-centered > p {
+  font-size: 1rem;
+  color: rgba(255,255,255,0.6);
+  max-width: 580px;
+  margin: 0 auto 44px;
+  line-height: 1.75;
+}
+.hiring-perks-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  margin-bottom: 40px;
+}
+.hiring-perk-card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: var(--radius-lg);
+  padding: 26px 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  transition: border-color var(--transition), background var(--transition);
+}
+.hiring-perk-card:hover {
+  border-color: var(--green);
+  background: rgba(0,210,106,0.06);
+}
+.hiring-perk-icon {
+  font-size: 1.8rem;
+  margin-bottom: 4px;
+}
+.hiring-perk-card strong {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--white);
+}
+.hiring-perk-card span {
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.5);
+  line-height: 1.55;
 }
 
 /* =============================================
@@ -1195,7 +1165,6 @@ footer {
 
   .hero-inner { grid-template-columns: 1fr; }
   .hero-map { display: block; margin-top: 32px; }
-  #service-map { height: 320px; }
   .hero { min-height: auto; padding: 100px 24px 60px; }
 
   .stats-grid { grid-template-columns: repeat(2, 1fr); }
@@ -1204,13 +1173,11 @@ footer {
   .steps-grid { grid-template-columns: 1fr; }
   .footer-top { grid-template-columns: 1fr 1fr; }
   .contact-layout { grid-template-columns: 1fr; }
-  .hiring-inner { flex-direction: column; text-align: center; }
-  .hiring-left p { margin: 0 auto; }
-  .hiring-visual { width: 100%; max-width: 440px; margin: 0 auto; }
-  .hiring-perks { align-items: center; }
+  .hiring-perks-row { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 600px) {
+  .hiring-perks-row { grid-template-columns: 1fr 1fr; }
   .services-grid { grid-template-columns: 1fr; }
   .clients-grid { grid-template-columns: repeat(2, 1fr); }
   .footer-top { grid-template-columns: 1fr; }

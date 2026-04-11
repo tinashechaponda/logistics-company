@@ -26,7 +26,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700;1,800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.min.css" />
   <link rel="stylesheet" href="styles/main.css" />
 </head>
 <body>
@@ -74,12 +73,8 @@
         </div>
       </div>
       <div class="hero-map">
-        <div class="map-wrapper">
-          <div class="map-legend">
-            <div class="map-legend-item primary"><span></span>Primary Hubs</div>
-            <div class="map-legend-item secondary"><span></span>Service Area</div>
-          </div>
-          <div id="service-map"></div>
+        <div class="hero-van-wrap">
+          <img src="images/van.png" alt="Balm of Gilead Logistics cargo van" class="hero-van-img" />
         </div>
       </div>
     </div>
@@ -253,22 +248,33 @@
 
   <!-- NOW HIRING -->
   <section class="section-hiring" id="hiring">
-    <div class="hiring-inner">
-      <div class="hiring-left">
-        <span class="section-label-light">Join the Team</span>
-        <h2>Subcontractors<br>Wanted</h2>
-        <p>Do you have a cargo van, box truck, SUV, or sedan? Join our growing network of independent delivery drivers serving Michigan and the surrounding region. Set your schedule, work on your terms.</p>
-        <div class="hiring-perks">
-          <div class="hiring-perk"><span>&#10003;</span> Flexible schedule</div>
-          <div class="hiring-perk"><span>&#10003;</span> Any vehicle welcome</div>
-          <div class="hiring-perk"><span>&#10003;</span> Fast onboarding</div>
+    <div class="hiring-centered">
+      <span class="section-label-light">Now Hiring</span>
+      <h2>Subcontractors Wanted</h2>
+      <p>Do you have a cargo van, box truck, SUV, or sedan? Join our growing network of independent delivery drivers serving Michigan and the surrounding region. Set your schedule, work on your terms.</p>
+      <div class="hiring-perks-row">
+        <div class="hiring-perk-card">
+          <div class="hiring-perk-icon">&#128336;</div>
+          <strong>Flexible Schedule</strong>
+          <span>Work when it fits your life. Days, evenings, weekends &mdash; you set the hours.</span>
         </div>
-        <a href="subcontractors.html" class="btn btn--green">Apply Now &rarr;</a>
+        <div class="hiring-perk-card">
+          <div class="hiring-perk-icon">&#128661;</div>
+          <strong>Any Vehicle Welcome</strong>
+          <span>Cargo van, box truck, SUV, or sedan &mdash; if it moves freight, we want you.</span>
+        </div>
+        <div class="hiring-perk-card">
+          <div class="hiring-perk-icon">&#9889;</div>
+          <strong>Fast Onboarding</strong>
+          <span>Apply today, get on the road fast. Simple process, no long waits.</span>
+        </div>
+        <div class="hiring-perk-card">
+          <div class="hiring-perk-icon">&#128200;</div>
+          <strong>Steady Work</strong>
+          <span>Consistent routes available across Michigan and surrounding Midwest states.</span>
+        </div>
       </div>
-      <div class="hiring-visual">
-        <div class="van-shadow"></div>
-        <img src="images/van.png" alt="Balm of Gilead Logistics cargo van" class="van-img" />
-      </div>
+      <a href="subcontractors.html" class="btn btn--green">Apply Now &rarr;</a>
     </div>
   </section>
 
@@ -321,8 +327,6 @@
     </div>
   </footer>
 
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.min.js"></script>
   <script src="scripts/site.js" defer></script>
-  <script src="scripts/map.js" defer></script>
 </body>
 </html>
