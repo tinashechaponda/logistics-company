@@ -618,7 +618,6 @@ a  { text-decoration: none; color: inherit; }
 .section-area {
   background: linear-gradient(135deg, #0D1B2A 0%, #162436 50%, #1a2d42 100%);
   padding: 70px 24px;
-  text-align: center;
   position: relative;
   overflow: hidden;
 }
@@ -629,6 +628,15 @@ a  { text-decoration: none; color: inherit; }
   background: radial-gradient(ellipse at 50% 100%, rgba(0,71,186,0.2) 0%, transparent 65%);
   pointer-events: none;
 }
+.area-inner {
+  max-width: 1160px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: center;
+}
+.area-text { text-align: left; }
 .section-area .section-label { color: var(--green); margin-bottom: 12px; }
 .section-area h2 {
   font-family: var(--ff-display);
@@ -643,13 +651,18 @@ a  { text-decoration: none; color: inherit; }
   color: rgba(255,255,255,0.6);
   margin-bottom: 28px;
   max-width: 480px;
-  margin-left: auto;
-  margin-right: auto;
+}
+.area-map img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+  display: block;
 }
 .area-cities {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 10px;
   flex-wrap: wrap;
   margin-bottom: 30px;
@@ -1195,6 +1208,9 @@ footer {
   .footer-top { grid-template-columns: 1fr 1fr; }
   .contact-layout { grid-template-columns: 1fr; }
   .hiring-perks-row { grid-template-columns: repeat(2, 1fr); }
+  .area-inner { grid-template-columns: 1fr; gap: 32px; }
+  .area-text { text-align: center; }
+  .area-cities { justify-content: center; }
 }
 
 @media (max-width: 600px) {
